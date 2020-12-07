@@ -10,11 +10,11 @@ const WorkoutTable = (props) => {
           'Authorization': props.token  
         })
     })
-    .then(() => props.fetchWorkout()) 
+    .then(() => props.fetchWorkouts()) 
 }
 
 const workoutMapper = () => {
-    return props.workouts.amps((workout, index) => {
+    return props.workouts.map((workout, index) => {
         return (
             <tr key={index}>
                 <th scope="row">{workout.id}</th>
@@ -22,7 +22,7 @@ const workoutMapper = () => {
                 <td>{workout.description}</td>
                 <td>{workout.definition}</td>
                 <td>
-                    <Button color="warning">Update</Button>
+                    <Button color="warning" onClick={() => {props.editUpdateWorkout(workout); props.updateOn()}}>Update</Button>
                     <Button color="danger" onClick={() => {deleteWorkout(workout)}}>Delete</Button>
                 </td>
             </tr>

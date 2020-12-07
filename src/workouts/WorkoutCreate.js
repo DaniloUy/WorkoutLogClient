@@ -28,7 +28,7 @@ const WorkoutCreate = (props) => {
     return (
         <>
         <h3>Log a Workout</h3>
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="description"/>
                 <Input name="description" value={description} onChange={(e) => setDescription(e.target.value)}/>

@@ -34,7 +34,7 @@ return (
              <Input name="description" value={editDesc} onChange={(e) => setEditDesc(e.target.value)}/>
          </FormGroup>
          <FormGroup> 
-         <Label htmlFor="definition">Edit Definition</Label>/>
+         <Label htmlFor="definition">Edit Definition:</Label>
             <Input type="select" name="definition" value={editDef} onChange={(e) => setEditDef(e.target.value)}> 
             <option></option>
             <option value="Time">Time</option>
