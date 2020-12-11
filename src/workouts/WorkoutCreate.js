@@ -28,21 +28,23 @@ const WorkoutCreate = (props) => {
     return (
         <>
         <h3>Log a Workout</h3>
+        <br/>
         <Form onSubmit={handleSubmit}>
             <FormGroup>
-                <Label htmlFor="description"/>
+                {/* <Label htmlFor="description"/> */}
+                <Label htmlFor="description">Description</Label>
                 <Input name="description" value={description} onChange={(e) => setDescription(e.target.value)}/>
             </FormGroup>
             <FormGroup> 
-            <Label htmlFor="definition"/>
-                <Input type="select" name="definition" value={definition} onChange={(e) => setDefinition(e.target.value)}> 
-                <option value="Time">Time</option>
-                <option value="Weight">Weight</option>
+                <Label htmlFor="definition">Definition</Label>
+                <Input type="select" name="definition" value={definition} onChange={(e) => setDefinition(e.target.value)}>
                 <option value="Distance">Distance</option>
+                <option value="Time">Time</option>
+                <option value="Weight">Weight</option>                
                 </Input>    
             </FormGroup>    
             <FormGroup>
-                <Label htmlFor="result"/>
+                <Label htmlFor="result">Result</Label>
                 <Input name="result" value={result} onChange={(e) => setResult(e.target.value)}/>
             </FormGroup>
             <Button type="submit">Click to Submit</Button>

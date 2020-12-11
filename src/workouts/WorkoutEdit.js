@@ -19,16 +19,12 @@ const WorkoutEdit = (props) => {
             props.updateOff();
     })
 }
-
+  
 return (
     <Modal isOpen={true}>
        <ModalHeader>Log a Workout</ModalHeader>
        <ModalBody> 
         <Form onSubmit={workoutUpdate}>
-         <FormGroup>
-             <Label htmlFor="result">Edit Result:</Label>
-             <Input name="result" value={editRes} onChange={(e) => setEditRes(e.target.value)}/>
-         </FormGroup>
          <FormGroup>
              <Label htmlFor="description">Edit Description:</Label>
              <Input name="description" value={editDesc} onChange={(e) => setEditDesc(e.target.value)}/>
@@ -41,7 +37,11 @@ return (
             <option value="Weight">Weight</option>
             <option value="Distance">Distance</option>
             </Input>    
-         </FormGroup>    
+         </FormGroup>
+         <FormGroup>
+             <Label htmlFor="result">Edit Result:</Label>
+             <Input name="result" value={editRes} onChange={(e) => setEditRes(e.target.value)}/>
+         </FormGroup>     
          <Button type="submit">Update the workout!</Button>
         </Form>
        </ModalBody>

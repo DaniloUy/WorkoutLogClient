@@ -26,8 +26,8 @@ const Login = (props) => {
             <h1>Login</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
-                    <Label htmlFor="email">Username</Label>
-                    <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email}/>  
+                    <Label htmlFor="email">Email</Label>
+                    <Input onChange={(e) => setEmail(e.target.value)} name="email" type="email" value={email}/>  
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>

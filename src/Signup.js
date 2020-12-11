@@ -27,7 +27,7 @@ const Signup = (props) => {
             <h1>Sign Up</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
-                    <Label htmlFor="email">Username</Label>
+                    <Label htmlFor="email">Email</Label>
                     <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email}/>      
                 </FormGroup>
                 <FormGroup>
