@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
-
+import APIURL from '../helpers/environment';
+ 
 const WorkoutCreate = (props) => {
     const [description, setDescription] = useState('');
     const [definition, setDefinition] = useState('');
@@ -8,7 +9,8 @@ const WorkoutCreate = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3000/journal/create', {
+        fetch(`${APIURL}/journal/create`, {  
+        // fetch('http://localhost:4000/journal/create', {
             method: 'POST',
             body: JSON.stringify({log: {description: description, definition: definition, result: result}}),
             headers: new Headers ({
@@ -27,6 +29,7 @@ const WorkoutCreate = (props) => {
 
     return (
         <>
+        <br/>
         <h3>Log a Workout</h3>
         <br/>
         <Form onSubmit={handleSubmit}>
@@ -38,6 +41,7 @@ const WorkoutCreate = (props) => {
             <FormGroup> 
                 <Label htmlFor="definition">Definition</Label>
                 <Input type="select" name="definition" value={definition} onChange={(e) => setDefinition(e.target.value)}>
+                <option value=""></option>
                 <option value="Distance">Distance</option>
                 <option value="Time">Time</option>
                 <option value="Weight">Weight</option>                

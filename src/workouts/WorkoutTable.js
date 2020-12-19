@@ -1,9 +1,11 @@
 import React from 'react';
 import {Table, Button} from 'reactstrap';
+import APIURL from '../helpers/environment';
 
 const WorkoutTable = (props) => {
     const deleteWorkout = (workout) => {
-    fetch(`http://localhost:3000/journal/delete/${workout.id}`, {
+    fetch(`${APIURL}/journal/delete/${workout.id}`, {
+    // fetch(`http://localhost:4000/journal/delete/${workout.id}`, {
         method: 'DELETE',
         headers: new Headers({
           'Content-Type': 'application/json',
@@ -33,12 +35,13 @@ const workoutMapper = () => {
 
 return (
     <>
+    <br/>
     <h3>Workout History</h3>
     {/* <hr/> */}
     <Table striped>
         <thead>
             <tr>
-                <th>Log ID</th>
+                <th>Log #</th>
                 <th>Description</th>
                 <th>Definition</th>
                 <th>Result</th>

@@ -13,4 +13,4 @@ switch (window.location.hostname) {
         APIURL = 'https://du-workoutlog-server.herokuapp.com'
 }
 
-export default APIURL
+export default APIURL;

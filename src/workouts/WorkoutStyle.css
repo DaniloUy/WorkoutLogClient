@@ -1,0 +1,19 @@
+.close {
+    position: absolute; 
+    right: 20px;
+    height: 40px; 
+    font-size: 25px;
+    font-weight: bolder;
+    /* transition: .2s; */
+    border: 0;
+    top: 15px; 
+    color: white;
+    background-color: white;
+  }
+  
+.close:hover,
+.close:focus {
+
+  color: white;
+    cursor: pointer;
+  }

@@ -3,14 +3,16 @@ import {Container, Row, Col} from 'reactstrap';
 import WorkoutCreate from './WorkoutCreate'; 
 import WorkoutTable from './WorkoutTable'; 
 import WorkoutEdit from './WorkoutEdit'; 
- 
+import APIURL from '../helpers/environment';
+  
 const WorkoutIndex = (props) => {
     const [workouts, setWorkouts] = useState([]);
     const [updateActive, setUpdateActive] = useState(false);
     const [workoutToUpdate, setWorkoutToUpdate] = useState({});
      
     const fetchWorkouts = () => {
-        fetch ('http://localhost:3000/journal/mine', {
+        fetch (`${APIURL}/journal/mine/`, {
+        // fetch ('http://localhost:4000/journal/mine', {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',

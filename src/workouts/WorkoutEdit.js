@@ -1,13 +1,16 @@
 import React, {useState} from 'react';
 import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} from 'reactstrap';
-
+import APIURL from '../helpers/environment';
+import '../workouts/WorkoutStyle.css'; 
+   
 const WorkoutEdit = (props) => {
     const [editDesc, setEditDesc] = useState(props.workoutToUpdate.description);
     const [editDef, setEditDef] = useState(props.workoutToUpdate.definition);
     const [editRes, setEditRes] = useState(props.workoutToUpdate.result);
     const workoutUpdate = (event, workout) => {
         event.preventDefault();
-        fetch(`http://localhost:3000/journal/update/${props.workoutToUpdate.id}`, {
+        fetch(`${APIURL}/journal/update/${props.workoutToUpdate.id}`, {   
+        // fetch(`http://localhost:4000/journal/update/${props.workoutToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({log: {description: editDesc, definition: editDef, result: editRes}}),
             headers: new Headers ({
@@ -22,7 +25,11 @@ const WorkoutEdit = (props) => {
   
 return (
     <Modal isOpen={true}>
-       <ModalHeader>Log a Workout</ModalHeader>
+       <ModalHeader>Log a Workout
+        <div class="close">   
+        <Button onClick={props.updateOff}>X</Button> 
+        </div>
+       </ModalHeader>
        <ModalBody> 
         <Form onSubmit={workoutUpdate}>
          <FormGroup>

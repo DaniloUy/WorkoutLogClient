@@ -7,7 +7,8 @@ import { //1
   Nav,
   NavItem,
   Button
-} from 'reactstrap';
+} from 'reactstrap'
+import '../home/Sitebar.css';
 
 const Sitebar = (props) => { //2
   //3
@@ -28,7 +29,7 @@ const Sitebar = (props) => { //2
            </NavItem>
          </Nav>
        </Collapse>
-      </Navbar>
+      </Navbar>      
   )
 }
 
