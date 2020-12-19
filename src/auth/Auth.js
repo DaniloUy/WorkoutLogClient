@@ -47,11 +47,11 @@ const Auth = (props) => {
 
     fetch(url, {
       method: 'POST',
-      // headers: new Headers({
-      headers: {  
+      headers: new Headers({
+      // headers: {  
         'Content-Type': "application/json"      
-      // }),
-      },
+      }),
+      // },
       body: JSON.stringify(bodyObj)
     })
     .then(response => response.json())
