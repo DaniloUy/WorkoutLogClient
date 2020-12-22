@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import {Container, Row, Col} from 'reactstrap'; //1
-import Signup from '../Signup';
-import Login from '../Login';
+import {Button, Form, Label, Input, Modal, ModalHeader, ModalBody} from 'reactstrap';
+// import Signup from '../Signup';
+// import Login from '../Login';
 import '../auth/Auth.css';
 import APIURL from '../helpers/environment';
 
@@ -80,7 +81,7 @@ const Auth = (props) => {
   const signupFields = () => {
     return !login ? ( 
       <div>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Name</label>
           <br/>
           <input
           type="text"
@@ -98,7 +99,7 @@ const Auth = (props) => {
            <br/>
            <h1>{title()}</h1>
            {signupFields()}
-           <label htmlFor="email">Email:</label>    
+           <label htmlFor="email">Email</label>    
            <br/>
            <input 
                type="text" 
@@ -115,7 +116,7 @@ const Auth = (props) => {
                }} 
            /> 
            <br/>     
-           <label htmlFor="password">Password:</label>    
+           <label htmlFor="password">Password</label>    
            <br/>
            <input 
                type="password" 
@@ -127,7 +128,7 @@ const Auth = (props) => {
                setPassword(event.target.value);
                }} 
            /> 
-           <br/>
+           {/* <br/>
            <br/>
            <button onClick={loginToggle}>Login/Signup Toggle</button>
            <br/>
@@ -135,7 +136,18 @@ const Auth = (props) => {
            <button type="submit">Submit</button>
            <br/>
            <br/>
-           <p>{message}</p>  
+           <p>{message}</p>     */}           
+            
+           {/* <div className="buttons"> */}
+              <br/>
+              <br/>
+              { login ? <button id="Submit" type="submit">Login</button> : password.length < 5 ? <p>Password must be minimum 5 characters in length</p> : <button type="submit" id="Submit">Sign Up</button> }
+              <p>{message}</p>               
+              {/* <hr/> */}
+              { login ? <p>Don't have an account?</p> : <p>Already have an account?</p>}
+              <button id="Login" onClick={loginToggle}>  { login ? "Switch to Sign Up" : "Switch to Login"}  </button>
+           {/* </div> */}
+              
          </form>  
       </div>
 );
