@@ -141,7 +141,7 @@ const Auth = (props) => {
            {/* <div className="buttons"> */}
               <br/>
               <br/>
-              { login ? <button id="Submit" type="submit">Login</button> : password.length < 5 ? <p>Use Password minimum 5 characters to display Signup button.</p> : <button type="submit" id="Submit">Signup</button> }
+              { login ? <button id="Submit" type="submit">Login</button> : password.length < 5 ? <p>Password must be minimum 5 characters to display Signup button.</p> : <button type="submit" id="Submit">Signup</button> }
               <p>{message}</p>               
               {/* <hr/> */}
               { login ? <p>Don't have an account?</p> : <p>Already have an account?</p>}
