@@ -61,7 +61,7 @@ const Auth = (props) => {
       console.log('data:',data);     
       props.updateToken(data.sessionToken);  
       setMessage(data.message);  
-    }) .then((error) => login ? setMessage("Login failed") : setMessage("Signup failed")) 
+    }) .then((error) => login ? setMessage("Login failed.") : setMessage("Signup failed.")) 
   }
           
   const title = () => {
@@ -141,11 +141,11 @@ const Auth = (props) => {
            {/* <div className="buttons"> */}
               <br/>
               <br/>
-              { login ? <button id="Submit" type="submit">Login</button> : password.length < 5 ? <p>Password must be minimum 5 characters in length</p> : <button type="submit" id="Submit">Sign Up</button> }
+              { login ? <button id="Submit" type="submit">Login</button> : password.length < 5 ? <p>Use Password minimum 5 characters to display Signup button.</p> : <button type="submit" id="Submit">Signup</button> }
               <p>{message}</p>               
               {/* <hr/> */}
               { login ? <p>Don't have an account?</p> : <p>Already have an account?</p>}
-              <button id="Login" onClick={loginToggle}>  { login ? "Switch to Sign Up" : "Switch to Login"}  </button>
+              <button id="Login" onClick={loginToggle}>  { login ? "Switch to Signup" : "Switch to Login"}  </button>
            {/* </div> */}
               
          </form>  
