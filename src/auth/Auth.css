@@ -1,8 +1,12 @@
 .Login {
     position: absolute; 
-    margin-left: 530px;
+    margin-left: 530px;    
 }
 
-/* .buttons{
-  text-align: center;
-}   */
+#Switch1 {
+  width: 100%;
+}  
+
+#Switch2 {
+  width: 180px; 
+}

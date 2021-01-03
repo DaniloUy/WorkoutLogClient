@@ -141,11 +141,11 @@ const Auth = (props) => {
            {/* <div className="buttons"> */}
               <br/>
               <br/>
-              { login ? <button id="Submit" type="submit">Login</button> : password.length < 5 ? <p>Password must be minimum 5 characters to display Signup button.</p> : <button type="submit" id="Submit">Signup</button> }
+              { login ? <button id="Switch1" type="submit">Login</button> : password.length < 5 ? <p>Password must be minimum 5 characters to display Signup button.</p> : <button id="Switch1" type="submit" >Signup</button> }
               <p>{message}</p>               
               {/* <hr/> */}
               { login ? <p>Don't have an account?</p> : <p>Already have an account?</p>}
-              <button id="Login" onClick={loginToggle}>  { login ? "Switch to Signup" : "Switch to Login"}  </button>
+              <button id="Switch2" type="submit" onClick={loginToggle}>  { login ? "Switch to Signup" : "Switch to Login"} </button>
            {/* </div> */}
               
          </form>  
