@@ -94,7 +94,7 @@ const Auth = (props) => {
   }
         
   return (
-      <div class="Login">
+      <div id="Login">
          <form onSubmit={handleSubmit}> 
            <br/>
            <h1>{title()}</h1>

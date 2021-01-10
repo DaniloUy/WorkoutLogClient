@@ -1,10 +1,10 @@
-.Login {
-    position: absolute; 
-    margin-left: 530px;    
+#Login {
+    margin: auto;
+    text-align: center;
 }
 
 #Switch1 {
-  width: 100%;
+  width: 180px;
 }  
 
 #Switch2 {
